@@ -7,8 +7,11 @@
     "test": "MODE=development node src/index.js",
     "start": "MODE=production PORT=80 node src/index.js"
   },
-  "resolutions": "https://github.com/rasmuslos/reverse-proxy",
-  "readme": "https://github.com/rasmuslos/reverse-proxy/README.md",
+  "readme": "https://github.com/rasmuslos/reverse-proxy/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rasmuslos/reverse-proxy"
+  },
   "author": "Rasmus",
   "license": "MIT",
   "dependencies": {
