@@ -19,7 +19,7 @@ Example:
 
 Example:
  - `(^localhost$|^home.localhost$)` That will apply to the `localhost` and `home.localhost` domains
- - `(^accounts.example.com$|^exampleaccounts.com$)` This will apply to domains `accounts.example.com` and `exampleaccounts.com`
+ - `(^accounts.example.com$|^exampleaccounts.com$)` This will apply to the domains `accounts.example.com` and `exampleaccounts.com`
  
 ### pathRegex *optional*
 **A regex expression which must apply to the path**
