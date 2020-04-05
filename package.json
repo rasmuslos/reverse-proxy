@@ -1,0 +1,18 @@
+{
+  "name": "reverse-proxy",
+  "version": "2.0.1",
+  "description": "A reverse proxy build with NodeJS and MongoDB",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "MODE=development node src/index.js",
+    "start": "MODE=production PORT=80 node src/index.js"
+  },
+  "author": "Rasmus",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.0",
+    "signale": "^1.4.0",
+    "stream-array": "^1.1.2"
+  }
+}
