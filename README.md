@@ -1,7 +1,20 @@
 # Reverse Proxy
 A reverse proxy build with NodeJS
 ***
-This is a simple proxy built with NodeJS. The configuration works as follows:
+This is an easily expandable reverse proxy. The configuration is very simple, but extremely powerful
+
+## Features
+ - [Simple configuration](#config)
+ - [Easy to expand](#easy-to-expand)
+ - [Static files](#static-files)
+ - [Path and domain recognition](#config)
+ - [Regex powered](#config)
+
+## Easy to expand
+The source code is well documented and clearly understandable. It is very easy to add new functions
+
+## Static files
+You just want to have favorite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
 
 ## Config
 The route key contains an array of several objects that must follow the rules below
