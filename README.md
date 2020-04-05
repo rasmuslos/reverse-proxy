@@ -23,6 +23,7 @@ Example:
  
 ### pathRegex *optional*
 **A regex expression which must apply to the path**
+
 *The domain regex must take effect before this regex works and no / may be used at the beginning and end*
 
 Example:
