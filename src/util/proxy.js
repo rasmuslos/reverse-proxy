@@ -27,5 +27,8 @@ const proxyWeb = (req, res, next) => {
 }
 
 // TODO: Add ws support
+const proxyWs = (res, socket, upgradeHead) => {
+    socket.end();
+}
 
-module.exports = { proxyWeb }
+module.exports = { proxyWeb, proxyWs }
