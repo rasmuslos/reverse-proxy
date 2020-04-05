@@ -2,11 +2,11 @@ let cache = {}
 const deleteCache = () => cache = {}
 
 /**
- * Find a route from a given request (The first matching will be the result)
+ * Find the target of a url
  * 
- * @param req The request from express
- * @param res The responce from express
- * @param next the next handler from express
+ * @param req The request object of the express server
+ * @param res The responce object of the express server
+ * @param next The next handler
  */
 const findRoute = (req) => {
     const cacheKey = `${req.hostname}/${req.path}`
@@ -22,14 +22,11 @@ const findRoute = (req) => {
         const { domainRegex, pathRegex, route } = routes[i]
 
         if(domain.match(domainRegex) != null) {
-            // Check if this route only matches at a specific path
             if(pathRegex == null) {
                 match = route
                 break;
             } else {
                 let path = req.path
-
-                // Normalise path (remove / at start and end)
                 while(path.startsWith("/"))
                     path = path.substring(1, path.length)
                 while(path.endsWith("/"))

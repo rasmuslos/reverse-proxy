@@ -3,7 +3,7 @@ const Config = require("./Config")
 
 class ProxyConfig extends Config {
     /**
-     * Create an Config Object from /config.json
+     * Create a config from the file /config.json
      */
     constructor() {
         super(`config.json`)
@@ -12,7 +12,7 @@ class ProxyConfig extends Config {
     }
 
     /**
-     * Delete cache when the file is reloaded
+     * Clear the cache when the config is read again
      */
     async readData() {
         this.full = null
@@ -22,9 +22,9 @@ class ProxyConfig extends Config {
     }
 
     /**
-     * Get an array witch contains the routes
+     * Get an array that contains the targets
      * 
-     * @returns {Array} An array witch contains the routes as Objects
+     * @returns {Array} An array that contains the targets as objects
      */
     getRoutes() {
         if(this.routes == null) {
@@ -46,14 +46,7 @@ class ProxyConfig extends Config {
     }
 
     /**
-     * 
-     * Config scheme:
-     * routes:
-     *  - route: The route where the traffic should be send to
-     *  - subdomains: An array, witch contains the subdomains, where the route should be used
-     *  - paths (not required): Should the system only work on specific paths, for example (/api/)
-     * 
-     * @param {Object} The object witch should have the scheme above
+     * @param {Object} object Validate an object
      */
     _validate(object) {        
         const { route, domainRegex, pathRegex } = object

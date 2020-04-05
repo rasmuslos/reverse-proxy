@@ -6,9 +6,9 @@ const root = process.cwd()
 
 class Config {
     /**
-     * Consruct a config object
+     * Create a config object
      * 
-     * @param {String} file The path where the config file can be found
+     * @param {String} file The path to the file to be read
      */
     constructor(file) {
         signale.info("Reading config from", file)
@@ -20,7 +20,7 @@ class Config {
      * 
      * @param {String | Array} key The key where the value can be found
      * 
-     * @returns {String | Array} The value from the given path
+     * @returns {String | Array} The value of the given key
      */
     get(key) {        
         if(typeof key == "string")
@@ -30,7 +30,7 @@ class Config {
     }
 
     /**
-     * Reload the config from the file
+     * Read the data from the file
      */
     async readData() {
         await this._parse(this.file)
@@ -38,11 +38,12 @@ class Config {
     }
 
     /**
-     * Get a value from an array
+     * Get a value from a key that is an array
      * 
-     * @param {Array} path The key where the value can be found
+     * @param {Array} arr The key where the value can be found
+     * @param {Object} obj A JSON object in which the key is contained
      * 
-     * @returns {String | Array} The value from the given path
+     * @returns {String | Array} The value of the given key
      */
     _get(arr, obj = this.content) {
         const first = arr.shift()
@@ -56,9 +57,9 @@ class Config {
 
 
     /**
-     * Parse a string into a valid config object
+     * Load a file into a json object
      * 
-     * @param {String} obj Parse the config from a given string
+     * @param {String} file The path where the file can be found
      */
     async _parse(file) {
         signale.time("config_reload")

@@ -4,7 +4,7 @@ const readline = require('readline');
 const { deleteCache } = require("./switch")
 
 /**
- * Watch the terminal for incoming commands
+ * Wait for new commands in the terminal
  */
 const watch = () => {
     const rl = readline.createInterface({

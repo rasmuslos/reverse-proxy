@@ -2,7 +2,6 @@ const ProxyConfig = require("./ProxyConfig")
 
 const load = async () => {
     let proxyConfig = new ProxyConfig()
-
     global.proxyConfig = await proxyConfig.readData()
 }
 
