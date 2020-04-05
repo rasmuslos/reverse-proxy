@@ -26,4 +26,6 @@ const proxyWeb = (req, res, next) => {
     })
 }
 
+// TODO: Add ws support
+
 module.exports = { proxyWeb }
