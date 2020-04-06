@@ -1,0 +1,4 @@
+#Sample robots.txt
+User-agent: *
+Disallow: /api
+Disallow: /static
