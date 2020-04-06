@@ -1,12 +1,22 @@
-const streamify = require('stream-array')
+const streamify = require("stream-array")
 const httpProxy = require('http-proxy')
 const { findRoute } = require("./switch")
 
-const proxy = httpProxy.createProxyServer({
-    ws: true,
-    xfwd: true,
-    secure: false,
-});
+let proxy = null
+
+const init = async () => {
+
+    proxy = httpProxy.createProxyServer({
+        ws: true,
+        xfwd: true,
+        secure: false,
+    });
+
+    proxy.on('error', function (err, req, res) {
+        res.status(500).type("txt").send("Internal server error")
+    });
+
+}
 
 /**
  * Get the destination from an url and forward the traffic to the destination
@@ -31,4 +41,4 @@ const proxyWs = (res, socket, upgradeHead) => {
     socket.end();
 }
 
-module.exports = { proxyWeb, proxyWs }
+module.exports = { proxyWeb, proxyWs, init }

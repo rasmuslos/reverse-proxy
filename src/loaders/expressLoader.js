@@ -19,7 +19,7 @@ const init = async () => {
     app.use(express.static(path.resolve(root, "public")))
     app.use(proxyWeb)
 
-    app.all("*", (req, res) => res.status(404).send("<h1>Proxy error</h1><p>You are trying to access an non existing route. More information can be found <a href='https://github.com/rasmuslos/reverse-proxy'>here</a></p>"))
+    app.all("*", (req, res) => res.status(404).type("txt").send("You are trying to access an non existing route. More information can be found here https://github.com/rasmuslos/reverse-proxy"))
 
     server.on("upgrade", proxyWs)
 
