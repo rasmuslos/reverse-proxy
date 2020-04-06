@@ -7,6 +7,7 @@ This is an easily expandable reverse proxy. The configuration is very simple, bu
  - [Simple configuration](#config)
  - [Easy to expand](#easy-to-expand)
  - [Static files](#static-files)
+ - [Easy to reload](#easy-to-reload)
  - [Path and domain recognition](#config)
  - [Regex powered](#config)
 
@@ -16,8 +17,17 @@ The source code is well documented and clearly understandable. It is very easy t
 ## Static files
 You just want to have favorite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
 
+## Installation
+ 1. Clone or download this file
+ 2. Go to directory `cd reverse-proxy`
+ 3. Type `npm install`
+ 4. Use `npm start` to run this script. If you want to use a port other than 80, use `PORT=<port> node src/index.js`
+ 
+## Easy to reload
+If you make changes in config.json, you can enter reload in the running terminal. The config is read in again and you do not have to restart the script
+
 ## Config
-The route key contains an array of several objects that must follow the rules below
+The config is located in `config.json`. The route key contains an array of several objects that must follow the rules below
 > The following should unfold in the routes array
 
 ### Route
@@ -41,5 +51,22 @@ Example:
 
 Example:
  - `(^api)` Forwarding takes place only if you access `/api/*`
+
+### Example config
+```json
+{
+    "routes": [
+        {
+            "route": "http://sampleapi.com/",
+            "domainRegex": "(^example.com$|^api.exanple.com$|^prod.api.example.com$)",
+            "pathRegex": "(^api)"
+        },
+        {
+            "route": "http://localhost:3000",
+            "domainRegex": "(^example.com$|^home.example.com$)"
+        }
+    ]
+}
+```
 
 **NOTE: The very first object that meets all conditions is used**
