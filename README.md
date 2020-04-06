@@ -18,7 +18,7 @@ The source code is well documented and clearly understandable. It is very easy t
 You just want to have favorite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
 
 ## Installation
- 1. Clone or download this file
+ 1. Clone or download this repository
  2. Go to directory `cd reverse-proxy`
  3. Type `npm install`
  4. Use `npm start` to run this script. If you want to use a port other than 80, use `PORT=<port> node src/index.js`
