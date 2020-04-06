@@ -52,7 +52,7 @@ Example:
 Example:
  - `(^api)` Forwarding takes place only if you access `/api/*`
 
-###Example config
+### Example config
 ```json
 {
     "routes": [
