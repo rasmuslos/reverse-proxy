@@ -21,7 +21,7 @@ const init = async () => {
 
     app.all("*", (req, res) => res.status(404).send("<h1>Proxy error</h1><p>You are trying to access an non existing route. More information can be found <a href='https://github.com/rasmuslos/reverse-proxy'>here</a></p>"))
 
-    http.on("upgrade", proxyWs)
+    server.on("upgrade", proxyWs)
 
     errorWatcher(server)
     await listen(server)
