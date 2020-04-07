@@ -1,7 +1,6 @@
-const signale = require("signale")
 const Config = require("./Config")
 
-class SslConfig extends Config {
+class SecureConfig extends Config {
     constructor() {
         super("ssl.json")
     }
@@ -17,4 +16,4 @@ class SslConfig extends Config {
     }
 }
 
-module.exports = SslConfig
+module.exports = SecureConfig

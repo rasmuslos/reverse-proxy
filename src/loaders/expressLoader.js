@@ -8,21 +8,24 @@ const helmet = require('helmet')
 const signale = require("signale")
 
 const root = process.cwd()
+const SecureConfig = require("./../util/config/SecureConfig")
 const { web } = require("./../util/config")
-const { enabled, key, cert } = require("./../util/config/SslConfig")
 const { proxyWeb, proxyWs } = require("../util/proxy")
 
 const listen = server => new Promise((resolve, reject) => server.listen(web.port, resolve))
 const errorWatcher = server => server.on("error", error => signale.error(error))
 
 const init = async () => {
+    const secureConfig = new SecureConfig()
+    await secureConfig.readData()
+
     const app = express()
     let server = null
 
-    if(enabled) {
+    if(secureConfig.enabled) {
         server = https.createServer({
-            key: key,
-            cert: cert
+            key: secureConfig.key,
+            cert: secureConfig.cert
         }, app)
     } else
         server = http.createServer(app)
