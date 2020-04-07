@@ -11,20 +11,20 @@ This is an easily expandable reverse proxy. The configuration is very simple, bu
  - [Path and domain recognition](#config)
  - [Regex powered](#config)
 
-## Easy to expand
-The source code is well documented and clearly understandable. It is very easy to add new functions
-
-## Static files
-You just want to have favorite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
-
 ## Installation
  1. Clone or download this repository
  2. Go to directory `cd reverse-proxy`
  3. Type `npm install`
  4. Use `npm start` to run this script. If you want to use a port other than 80, use `PORT=<port> node src/index.js`
+
+## Easy to expand
+The source code is well documented and clearly understandable. It is very easy to add new functions
+
+## Static files
+You just want to have favorite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
  
 ## Easy to reload
-If you make changes in config.json, you can enter reload in the running terminal. The config is read in again and you do not have to restart the script
+If you make changes in config.json, you can enter `reload` in the running terminal. The config is read in again and you do not have to restart the script
 
 ## Config
 The config is located in `config.json`. The route key contains an array of several objects that must follow the rules below
