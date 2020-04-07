@@ -11,7 +11,7 @@ const root = process.cwd()
 const SecureConfig = require("./../util/config/SecureConfig")
 const { proxyWeb, proxyWs } = require("../util/proxy")
 
-const listen = server => new Promise((resolve, reject) => server.listen(resolve))
+const listen = (server, port) => new Promise((resolve, reject) => server.listen(port, resolve))
 const errorWatcher = server => server.on("error", error => signale.error(error))
 
 const init = async () => {
@@ -40,11 +40,11 @@ const init = async () => {
     server.on("upgrade", proxyWs)
 
     errorWatcher(server)
-    await listen(server)
+    await listen(80, server)
 
     if(secureConfig.enabled) {
         errorWatcher(secureServer)
-        await listen(secureServer)
+        await listen(443, secureServer)
     }
 }
 
