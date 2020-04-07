@@ -1,6 +1,5 @@
 const http = require("http")
 const path = require("path")
-const httpProxy = require("http-proxy")
 const express = require("express")
 const helmet = require('helmet')
 
