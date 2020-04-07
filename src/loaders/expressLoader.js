@@ -11,7 +11,7 @@ const root = process.cwd()
 const SecureConfig = require("./../util/config/SecureConfig")
 const { proxyWeb, proxyWs } = require("../util/proxy")
 
-const listen = (server, port) => new Promise((resolve, reject) => server.listen(port, resolve))
+const listen = (port, server) => new Promise((resolve, reject) => server.listen(port, resolve))
 const errorWatcher = server => server.on("error", error => signale.error(error))
 
 const init = async () => {
