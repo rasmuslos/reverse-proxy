@@ -11,7 +11,7 @@ const root = process.cwd()
 const SecureConfig = require("./../util/config/SecureConfig")
 const { proxyWeb, proxyWs } = require("../util/proxy")
 
-const listen = server => new Promise((resolve, reject) => server.listen(web.port, resolve))
+const listen = server => new Promise((resolve, reject) => server.listen(resolve))
 const errorWatcher = server => server.on("error", error => signale.error(error))
 
 const init = async () => {
@@ -20,14 +20,15 @@ const init = async () => {
 
     const app = express()
     let server = null
+    let secureServer = null
 
+    server = http.createServer(app)
     if(secureConfig.enabled) {
-        server = https.createServer({
+        secureServer = https.createServer({
             key: secureConfig.key,
             cert: secureConfig.cert
         }, app)
-    } else
-        server = http.createServer(app)
+    }
 
     app.use(helmet())
 
@@ -40,6 +41,11 @@ const init = async () => {
 
     errorWatcher(server)
     await listen(server)
+
+    if(secureConfig.enabled) {
+        errorWatcher(secureServer)
+        await listen(secureServer)
+    }
 }
 
 module.exports = { init }

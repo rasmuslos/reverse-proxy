@@ -7,6 +7,5 @@ const load = async () => {
 
 module.exports = {
     load,
-
     mode: process.env.MODE || "production",
 }
