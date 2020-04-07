@@ -9,7 +9,6 @@ const signale = require("signale")
 
 const root = process.cwd()
 const SecureConfig = require("./../util/config/SecureConfig")
-const { web } = require("./../util/config")
 const { proxyWeb, proxyWs } = require("../util/proxy")
 
 const listen = server => new Promise((resolve, reject) => server.listen(web.port, resolve))

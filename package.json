@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "MODE=development node src/index.js",
-    "start": "MODE=production PORT=80 node src/index.js"
+    "start": "MODE=production node src/index.js"
   },
   "readme": "https://github.com/rasmuslos/reverse-proxy/blob/master/README.md",
   "repository": {

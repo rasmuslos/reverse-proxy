@@ -9,7 +9,4 @@ module.exports = {
     load,
 
     mode: process.env.MODE || "production",
-    web: {
-        port: process.env.PORT || 80,
-    },
 }
