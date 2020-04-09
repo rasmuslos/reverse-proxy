@@ -6,7 +6,7 @@ This is an easily expandable reverse proxy. The configuration is very simple, bu
 ## Features
  - [Simple configuration](#config)
  - [SSL support](#ssl-support)
- - [Secure]()
+ - [Secure](#secure)
  - [Easy to expand](#easy-to-expand)
  - [Static files](#static-files)
  - [Easy to reload](#easy-to-reload)
