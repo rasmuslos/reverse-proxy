@@ -5,6 +5,8 @@ This is an easily expandable reverse proxy. The configuration is very simple, bu
 
 ## Features
  - [Simple configuration](#config)
+ - [SSL support](#ssl-support)
+ - [Secure]()
  - [Easy to expand](#easy-to-expand)
  - [Static files](#static-files)
  - [Easy to reload](#easy-to-reload)
@@ -16,6 +18,12 @@ This is an easily expandable reverse proxy. The configuration is very simple, bu
  2. Go to directory `cd reverse-proxy`
  3. Type `npm install`
  4. Use `npm start` to run this script. If you want to use a port other than 80, use `PORT=<port> node src/index.js`
+
+## SSL Support
+Just switch on ssl in the `ssl.json`, insert your certificate and your key, and you have a working ssl server
+
+## Secure
+This proxy uses [helmet](https://github.com/helmetjs/helmet) to protect itself and the proxied sites
 
 ## Easy to expand
 The source code is well documented and clearly understandable. It is very easy to add new functions
