@@ -58,7 +58,7 @@ Example:
 *The domain regex must take effect before this regex works and no / may be used at the beginning and end*
 
 Example:
- - `(^api)` Forwarding takes place only if you access `/API/*`
+ - `(^api)` Forwarding takes place only if you access `/api/*`
 
 ### Example config
 ```json
