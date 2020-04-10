@@ -20,16 +20,16 @@ This is an easily expandable reverse proxy. The configuration is very simple, bu
  4. Use `npm start` to run this script. If you want to use a port other than 80, use `PORT=<port> node src/index.js`
 
 ## SSL Support
-Just switch on ssl in the `ssl.json`, insert your certificate and your key, and you have a working ssl server
+Just switch on SSL in the `ssl.json`, insert your certificate and your key, and you have a working SSL server
 
 ## Secure
 This proxy uses [helmet](https://github.com/helmetjs/helmet) to protect itself and the proxied sites
 
 ## Easy to expand
-The source code is well documented and clearly understandable. It is very easy to add new functions
+The source code is well documented and understandable. It is very easy to add new functions
 
 ## Static files
-You just want to have favorite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
+You just want to have a favourite icon, which is the same on all pages? No problem! Simply drag the file into the `public` order and the file is available on every domain
  
 ## Easy to reload
 If you make changes in config.json, you can enter `reload` in the running terminal. The config is read in again and you do not have to restart the script
@@ -39,7 +39,7 @@ The config is located in `config.json`. The route key contains an array of sever
 > The following should unfold in the routes array
 
 ### Route
-**The url to which the requests should be directed**
+**The URL to which the requests should be directed**
 
 Example:
  - http://localhost:1234
@@ -58,7 +58,7 @@ Example:
 *The domain regex must take effect before this regex works and no / may be used at the beginning and end*
 
 Example:
- - `(^api)` Forwarding takes place only if you access `/api/*`
+ - `(^api)` Forwarding takes place only if you access `/API/*`
 
 ### Example config
 ```json
